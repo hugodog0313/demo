@@ -30,5 +30,6 @@ public class MQController {
   public void sendMessageToReceiver(@RequestParam String message) {
     LocalDateTime localDateTime = LocalDateTime.now();
     amqpTemplate.convertAndSend("queue", localDateTime+","+message);
+//    amqpTemplate.convertAndSend("BOOT-EXCHANGE-1","Routing-Key","message");
   }
 }
